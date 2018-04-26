@@ -25,14 +25,21 @@ public class ShipperOrCarrierActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World - Testing!");
+        // myRef.setValue("Hello, World - Testing!"); // --> test conn. to DB
 
-        //Test JSON library GSon
-        //JsonTest test_json = new JsonTest();
-        //Gson gson = new GsonBuilder().create();
-        //gson.toJson(test_json);
-        //myRef.setValue(gson);
+        //JAVA to JSON - Carrier
+        Carrier carrier_test = new Carrier(10000, "he", "hello2","hello3","hello4","hello5");
+        Gson gsonObj_java_to_json = new Gson();
+        String jsonStrJson = gsonObj_java_to_json.toJson(carrier_test); // converts object to json string
+        myRef.setValue(jsonStrJson); // Push object to Firebase
 
+        // JSON string to JAVA Object - Carrier
+        Gson gson = new Gson();
+        String jsonInString = jsonStrJson;
+        Carrier carrier_json_str_to_java= gson.fromJson(jsonInString, Carrier.class);
+        Gson gsonObj_json_to_java = new Gson();
+        String jsonStrJava = gsonObj_json_to_java.toJson(carrier_json_str_to_java); // converts object to json string
+        myRef.setValue(jsonStrJava);
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override

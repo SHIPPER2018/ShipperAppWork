@@ -3,15 +3,15 @@ import android.graphics.Picture;
 import java.time.DayOfWeek;
 
 public class Carrier {
-    private int TruckSize;// String??????
+    public double TruckSize;// String??????
     //dates
-    private String From;
-    private String To;
-    private String DayOfWeek;
-    private Picture Driver;// drivers photo + truck
-    private String Desc;//description about driver
+    public String From;
+    public String To;
+    public String DayOfWeek;
+    public String Driver;// drivers photo + truck -----> Change back to picture
+    public String Desc;//description about driver
 
-    public Carrier (int TruckSize,String From ,String To ,String Day,Picture Driver,String Desc){
+    public Carrier (double TruckSize,String From ,String To ,String Day,String Driver,String Desc){
         this.TruckSize = TruckSize;
         this.Driver = Driver ;
         this.To = To ;
@@ -20,10 +20,10 @@ public class Carrier {
         this.Desc = Desc ;
     }
 
-    public void setTruckSize(int TruckSize){
+    public void setTruckSize(double TruckSize){
         this.TruckSize = TruckSize;
     }
-    public int getTruckSize(){
+    public double getTruckSize(){
         return TruckSize ;
     }
 
@@ -55,10 +55,10 @@ public class Carrier {
         return Desc;
     }
 
-    public void setDriver(Picture Driver){
+    public void setDriver(String Driver){
         this.Driver = Driver ;
     }
-    public Picture getDriver(){
+    public String getDriver(){
         return Driver ;
     }
 

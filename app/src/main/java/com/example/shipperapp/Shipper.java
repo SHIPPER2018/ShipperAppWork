@@ -3,13 +3,13 @@ package com.example.shipperapp;
 import java.time.DayOfWeek;
 
 public class Shipper {
-    private int ShipSize;
+    public double ShipSize;
     //dates
-    private String From ;
-    private String To ;
-    private String DayOfWeek ;
+    public String From ;
+    public String To ;
+    public String DayOfWeek ;
 
-    public Shipper (String From ,String To ,String DayOfWeek,int ShipSize){
+    public Shipper (String From ,String To ,String DayOfWeek,double ShipSize){
 
         this.ShipSize = ShipSize ;
         this.To = To ;
@@ -20,7 +20,7 @@ public class Shipper {
     public void setShipSize(int ShipSize){
         this.ShipSize = ShipSize ;
     }
-    public int getShipSize(){
+    public double getShipSize(){
         return ShipSize ;
     }
     public void setTo(String To){
