@@ -12,6 +12,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 
 public class ShipperOrCarrierActivity extends AppCompatActivity {
 
@@ -22,8 +25,13 @@ public class ShipperOrCarrierActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-        myRef.setValue("Hello, World - Yay!");
+        myRef.setValue("Hello, World - Testing!");
 
+        //Test JSON library GSon
+        //JsonTest test_json = new JsonTest();
+        //Gson gson = new GsonBuilder().create();
+        //gson.toJson(test_json);
+        //myRef.setValue(gson);
 
 
         myRef.addValueEventListener(new ValueEventListener() {
